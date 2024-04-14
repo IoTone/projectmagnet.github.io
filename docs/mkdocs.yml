@@ -1,0 +1,20 @@
+site_name: Project MagNET
+nav:
+  - 'index.md'
+  - 'Architecture': 
+    - 'General Architecture': 'architecture/general_architecture.md'
+    - 'Nodes': 'architecture/nodes.md'
+    - 'Nodes': 'architecture/controller.md'
+    - 'Gateway': 'architecture/gateway.md'
+    - 'Consumer': 'architecture/consumer.md'
+    - 'Prosumer': 'architecture/prosumer.md'
+    - 'Data Sink':
+      - 'Introduction': 'architecture/data_sink/data_sink.md'
+  - 'Use Cases':
+    - 'Energy': use_cases/energy.md
+    - 'Autonomous Agents': use_cases/autonomous_agents.md
+    - 'Smart Home': use_cases/smart_home.md
+
+
+
+theme: readthedocs
