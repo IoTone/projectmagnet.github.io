@@ -1,6 +1,6 @@
 # Overview
 
-Project Magnet
+Project Magnet Documentation
 
 ## Building
 
