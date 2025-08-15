@@ -1,6 +1,10 @@
 # Overview
 
 Project Magnet
+
+## Building
+
+See info below
  
 ## Lotus Docs
 
