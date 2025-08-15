@@ -1,4 +1,8 @@
-# Lotus Docs
+# Overview
+
+Project Magnet
+ 
+## Lotus Docs
 
 [Lotus Docs](https://lotusdocs.dev) is an easily updated and customisable [Hugo](https://gohugo.io/) theme for building fast, secure, and SEO-friendly documentation sites.
 
