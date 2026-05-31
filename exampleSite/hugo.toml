@@ -1,5 +1,5 @@
-baseURL = "/"
-languageCode = "en-GB"
+baseURL = "https://projectmagnet-github-docs.pages.dev/"
+languageCode = "en-US"
 contentDir = "content"
 enableEmoji = true
 enableGitInfo = true # N.B. .GitInfo does not currently function with git submodule content directories
@@ -7,19 +7,9 @@ enableGitInfo = true # N.B. .GitInfo does not currently function with git submod
 defaultContentLanguage = 'en'
 [languages]
   [languages.en]
-    title = "Lotus Docs Example Site"
+    title = "Project MagNET"
     languageName = "English"
     weight = 10
-  [languages.fr]
-    title = "Lotus Docs Exemple de Site"
-    languageName = "Français"
-    contentDir = "content/fr"
-    weight = 20
-  [languages.de]
-    title = "Lotus Docs Beispiel Site"
-    languageName = "Deutsch"
-    contentDir = "content/de"
-    weight = 30
 
 [module]
   [module.hugoVersion]
@@ -59,21 +49,21 @@ defaultContentLanguage = 'en'
   mono_font       = "Fira Code" # Default is System font
 
     [params.footer]
-        copyright = "© :YEAR: Lotus Labs. Built with [**Lotus Docs**](https://github.com/colinwilson/lotusdocs)"
+        copyright = "© :YEAR: Project MagNET. Built with [**Lotus Docs**](https://github.com/colinwilson/lotusdocs)"
         # version = true # includes git commit info
 
     [params.social]
-        github = ""        # YOUR_GITHUB_ID or YOUR_GITHUB_URL
+        github = "IoTone/ProjectMagNET"   # YOUR_GITHUB_ID or YOUR_GITHUB_URL
         twitter = ""       # YOUR_TWITTER_ID
         # instagram = "colinwilson"     # YOUR_INSTAGRAM_ID
         # rss = true                    # show rss icon with link
 
     [params.docs] # Parameters for the /docs 'template'
-        title           = "Lotus Docs Example Site"           # default html title for documentation pages/sections
+        title           = "Project MagNET"                    # default html title for documentation pages/sections
 
         # pathName        = "docs"                            # path name for documentation site | default "docs"
 
-        # themeColor      = "cyan"                            # (optional) - Set theme accent colour. Options include: blue (default), green, red, yellow, emerald, cardinal, magenta, cyan
+        themeColor      = "emerald"                           # (optional) - Set theme accent colour. Options include: blue (default), green, red, yellow, emerald, cardinal, magenta, cyan
 
         darkMode        = true                                # enable dark mode option? default false
 
@@ -82,8 +72,8 @@ defaultContentLanguage = 'en'
         prismTheme      = "solarized-light"                           # (optional) - Set theme for PrismJS. Options include: lotusdocs (default), solarized-light, twilight, lucario
 
         # gitinfo
-        repoURL         = "https://github.com/colinwilson/lotusdocs.dev"  # Git repository URL for your site [support for GitHub, GitLab, and BitBucket]
-        repoBranch      = "release"
+        repoURL         = "https://github.com/IoTone/ProjectMagNET"  # Git repository URL for your site [support for GitHub, GitLab, and BitBucket]
+        repoBranch      = "dev"
         editPage        = true                                # enable 'Edit this page' feature - default false
         lastMod         = true                                # enable 'Last modified' date on pages - default false
         lastModRelative = true                                # format 'Last modified' time as relative - default true
