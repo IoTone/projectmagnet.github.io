@@ -146,7 +146,7 @@ From `handle_hcp_line()` in `magnet_link.c`. **Privileged** means `verb_is_privi
 | `E_RATE_LIMITED` | The host multicast token bucket is empty |
 | `E_NO_PEER` | Bad or unreachable IPv6 address |
 | `E_UNKNOWN_PEER` | `OTA APPLY` target is not in `PEERS` |
-| `E_NOT_BONDED` | Privileged verb over an unbonded BLE link |
+| `E_NOT_BONDED` | Privileged verb, or any line in FORTH mode, over an unbonded BLE link |
 | `E_NOT_FOUND` | `ADMIN REMOVE` with no matching key |
 | `E_BUSY` | Allow-list full, transfer already active, transfer window full, or a stress run in progress |
 | `E_CONFIRM_REQUIRED` | `FACTORY RESET` without `CONFIRM` |
@@ -197,7 +197,7 @@ The BLE binding (service `6d61676e-2d68-6370-0001-000000000000`) carries the sam
 
 The privileged set is exactly `NAME`, `ADMIN`, `ROTATE`, `RAW`, `SCRIPT`, `HOOK`, `BUNDLE`, `OTA`, `FORTH`, `STRESS`, `FACTORY`, plus `CHANNEL SET` and `CHANNEL JOIN`. (`CHANNEL SHOW` and `CHANNEL LIST` are public.) Note that `TIME SET`, `HEARTBEAT`, `SUB`/`UNSUB`, `MODE`, `XFER`, `BOTMODE` and `LED` are **not** in this set.
 
-{{< alert context="warning" text="The bond check runs in the HCP dispatcher. Lines received while the link is in FORTH mode go straight to the Forth engine without it. Entering FORTH over BLE does require a bond, but the mode is node-wide, so a node left in FORTH mode from its USB console also accepts Forth from an unbonded BLE client. Return to HCP with <code>.hcp</code> before you leave a companion node unattended." />}}
+{{< alert context="info" text="<strong>FORTH mode over BLE.</strong> The mode is node-wide, so a node can be in FORTH because its USB console put it there. Every line in FORTH mode is treated as privileged: from a BLE link that is not bonded and encrypted, each one, <code>.hcp</code> included, gets <code>-ERR E_NOT_BONDED forth mode needs a bonded link</code> and is not run, and the node stays in FORTH for the USB user. (Before this fix, on 2026-10-03, such lines went straight to the engine.)" />}}
 
 Pairing practice (one OS prompt, stale bonds after a factory reset, choosing by UUID rather than name) is covered under [Security](/docs/hanasu/security/).
 

@@ -25,7 +25,7 @@ One link dispatcher task owns the host byte stream (USB serial, or BLE GATT on B
 
 All output (responses, events and Forth output) goes through one serialized writer, and the dispatcher holds it for the whole of a Forth evaluation, so an asynchronous `!CHAT` can never split a line of Forth output. FORTH mode is for people and power use; the strict HCP framing guarantees do not apply there. There is no local echo in FORTH mode.
 
-`FORTH`, `HOOK`, `SCRIPT` and `BUNDLE` are **privileged** verbs. Over BLE they return `E_NOT_BONDED` until the link is bonded and encrypted. The USB serial link is treated as physically trusted.
+`FORTH`, `HOOK`, `SCRIPT` and `BUNDLE` are **privileged** verbs. Over BLE they return `E_NOT_BONDED` until the link is bonded and encrypted. The USB serial link is treated as physically trusted. Once the node is in FORTH mode, every line from an unbonded BLE link is refused the same way, whoever switched the mode on.
 
 ### Engine limits
 

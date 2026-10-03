@@ -137,6 +137,7 @@ BLE is reachable by anyone nearby, so the GATT binding enforces bonding **per ve
 
 - Read-only verbs (`STATUS`, `CAPS`, `WHOAMI`, `PEERS`, `CHANNEL SHOW`, and so on) work on an unbonded link, so a phone can identify a node before pairing.
 - **Privileged verbs** return `-ERR E_NOT_BONDED` until the link is encrypted with a bond: `NAME`, `CHANNEL SET`/`JOIN`, `ADMIN`, `ROTATE`, `SCRIPT`, `HOOK`, `BUNDLE`, `OTA`, `FORTH`, `STRESS`, and `FACTORY`.
+- **FORTH mode** is node-wide; while it is on, every line from a BLE link that is not bonded is refused (`E_NOT_BONDED`), so a node left in FORTH from its USB console does not open the REPL to a stranger.
 
 The node pairs with **LE Secure Connections, Just Works** (the node has no display or keypad, so MITM protection is off), with legacy pairing enabled as a fallback. An encryption-required characteristic is what prompts the phone to start pairing; only the phone operating system's own pairing prompt can complete a bond. `docs/BLE-PAIRING.md` in the Hanasu repo records the details, including which behaviors are verified and which are not yet (for example, iOS is untested).
 
