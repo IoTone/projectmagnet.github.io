@@ -4,7 +4,7 @@ title: "Project MagNET"
 description: "An open, local-first platform for IoT data and hyperlocal, hive-centric AI."
 icon: "menu_book"
 date: "2026-05-29T00:00:00-05:00"
-lastmod: "2026-05-29T00:00:00-05:00"
+lastmod: "2026-10-03T00:00:00-05:00"
 draft: false
 toc: true
 ---
@@ -24,13 +24,17 @@ On top of that data substrate, MagNET investigates **distributed edge intelligen
 - **Hive-centric AI** — devices form a hive, take on roles, and share memory. See the [Hive AI](/docs/hive-ai/) section.
 - **Every device a cloud of services** — discoverable over BLE or Wi-Fi; detect → connect → provision → control → collect.
 - **You own your data & security** — secure transport and verified sessions, on by default.
-- **Open & interoperable** — zeroconf/Bonjour, Thread, Zigbee, LoRa/Meshtastic, and open APIs.
+- **Open & interoperable** — zeroconf/Bonjour, Thread (see [Hanasu](/docs/hanasu/)), Zigbee, LoRa/Meshtastic, and open APIs.
 
 ## Sections
 
 ### 🐝 [Hive AI](/docs/hive-ai/)
 
 The flagship reference design: a swarm of ESP32-class "biologic" nodes that discover a **ruler**, prove their lineage to join, hot-swap **roles** delivered as signed Forth bundles, and share memory across the hive. The most fully documented part of the project today.
+
+### 💬 [Hanasu](/docs/hanasu/)
+
+Encrypted chat and machine-to-machine messaging over a self-healing **Thread** mesh, with no infrastructure required. ESP32-C6 and XIAO MG24 nodes carry chat, DMs, signed admin commands and file transfers; any host drives them over USB serial or BLE with one line protocol, or drops into an embedded Forth. Includes signed over-the-air firmware updates with automatic rollback.
 
 ### 🗺️ [Roadmap](/docs/roadmap/)
 
@@ -42,8 +46,8 @@ A themed view of where the project is headed, distilled from the public issue tr
 |---|---|
 | `magnet_app/` | Cross-platform app (Flutter) — scanning, provisioning, and data views |
 | `datasync-proto/` | Rust prototype of the data-sync framework / data sink |
-| `reference-designs/` | Firmware for ESP32 / -S3 / -C3 / -C6 and nRF52 boards, including the Hive AI prototype |
+| `reference-designs/` | Firmware for ESP32 / -S3 / -C3 / -C6, EFR32MG24 and nRF52 boards, including the Hive AI prototype and Hanasu |
 | `specs/` | Design specs — Unified Device Model, device self-registration, and more |
 | `tools/` | Repo utilities |
 
-{{< alert context="info" text="This documentation is being actively built out. The <a href=\"/docs/hive-ai/\">Hive AI</a> section is complete; other areas are migrating from design notes and the issue tracker into full docs over time." />}}
+{{< alert context="info" text="This documentation is being actively built out. The <a href=\"/docs/hive-ai/\">Hive AI</a> and <a href=\"/docs/hanasu/\">Hanasu</a> sections are complete; other areas are migrating from design notes and the issue tracker into full docs over time." />}}

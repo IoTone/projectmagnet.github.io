@@ -80,7 +80,7 @@ featureGrid:
 
     - title: Reference Designs
       icon: developer_board
-      description: Working firmware for ESP32, ESP32-S3/-C3/-C6, and nRF52 boards — wearables, beacons, time servers, Thread/CoAP meshes, data sinks, and the Hive AI prototype.
+      description: Working firmware for ESP32, ESP32-S3/-C3/-C6, EFR32MG24, and nRF52 boards — wearables, beacons, time servers, the Hanasu Thread mesh, data sinks, and the Hive AI prototype.
       ctaLink:
         text: see the cast
         url: /docs/hive-ai/devices/

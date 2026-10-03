@@ -88,7 +88,7 @@ On success the bundle's words are registered in the global vocabulary, its top-l
 
 ## NVS persistence
 
-| Namespace | `craw_role_bundle` |
+| Namespace | `role_bundle` |
 |---|---|
 | Per-role keys | `n:<name>` → version, `b:<name>` → full envelope JSON |
 | Size limit | 4 KB per blob (NVS hard limit) |
