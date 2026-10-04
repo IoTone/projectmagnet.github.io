@@ -88,7 +88,7 @@ The order of checks on every received frame is:
 
 The epoch byte lets an admin replace the channel's working key. `ROTATE` (Forth: `mn-rotate`) sends the system command `rotate` (namespace `0x00`, command `0x03`) to the channel, carrying the next epoch number. It is flagged ADMIN and SIGNED; nodes verify the signature against their allow-list and then switch to the new epoch key. Each node keeps the immediately previous epoch key as well, so frames in flight during a rotation still decrypt. Anything older is rejected.
 
-{{< alert context="warning" text="<strong>Limits of rotation as built.</strong> (1) Each epoch key is computed deterministically from the channel's root secret, so anyone who holds the credential can derive every past and future epoch key; rotation does not give forward secrecy against a leaked credential, although design §11.1.8 aims for that. (2) The current epoch is kept in RAM only: a node that reboots returns to epoch 0. (3) The design's automatic daily rotation is not implemented; rotation happens only on an admin command." />}}
+{{< alert context="warning" text="<strong>Limits of rotation as built.</strong> (1) Each epoch key is computed deterministically from the channel's root secret, so anyone who holds the credential can derive every past and future epoch key; rotation does not give forward secrecy against a leaked credential, although design §11.1.8 aims for that. (2) The current epoch is kept in RAM only: a node that reboots after a rotation returns to epoch 0 and can no longer decrypt the mesh's traffic (bench-confirmed 2026-10-03; a fix is proposed in design §14). (3) The design's automatic daily rotation is not implemented; rotation happens only on an admin command." />}}
 
 ## Node identity
 
