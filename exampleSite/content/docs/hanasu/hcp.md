@@ -66,7 +66,7 @@ From `handle_hcp_line()` in `magnet_link.c`. **Privileged** means `verb_is_privi
 | `STATUS` | `STATUS` | `+OK state= role= channel= peers= name= id= ble=up\|off` | no |
 | `CAPS` | `CAPS` | One `+OK` line of `key=value` pairs: `proto`, `fw`, `maxline`, `transports`, `verbs`, `events`, `queue`, `xfer_chunk`, `xfer_window`, `xfer_max_chunks`, `mode`. `BOTMODE` and `LED` appear in `verbs` only on builds that include them. | no |
 | `HELP` | `HELP` | Human help as `#` lines, then `+OK`. Takes no per-verb argument. | no |
-| `WHOAMI` | `WHOAMI` | `+OK id=<8 hex> name=<name> fw=<version>` | no |
+| `WHOAMI` | `WHOAMI` | `+OK id=<8 hex> name=<name> fw=<version> [ota=<build>/<slot>/<state>]`. `fw` is the protocol release, the same on every build. `ota` is the installed build (`0.7.0+2/ota_0/confirmed`); state is `confirmed`, `test` (on trial) or `rolled-back`. Only OTA builds send it | no |
 | `PUBKEY` | `PUBKEY` | This node's 65-byte uncompressed P-256 identity public key, as 130 hex characters | no |
 | `NAME` | `NAME <name>` | Sets the display name: 1–16 characters, no spaces. Persisted, and announced on the mesh when READY. | **yes** |
 | `MODE` | `MODE TERSE\|HUMAN` | Suppresses or restores `#` lines | no |

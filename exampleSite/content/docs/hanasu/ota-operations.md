@@ -163,6 +163,7 @@ Then check the node on its host link:
 | Check | Expect |
 |---|---|
 | `WHOAMI` | The node's ID and name, unchanged from before |
+| `WHOAMI` (or the app's node screen, "Build") | `ota=<version>/<slot>/confirmed`. Works over BLE without pairing |
 | `FORTH`, then `ota-status` | `# ota: running v<version> … confirmed` and no staged image |
 | Boot log | No `!WARN ota-dev-keys` line. If it appears, the build trusts the DEV keys |
 
@@ -330,6 +331,6 @@ The MCUboot key has no second slot: rotating it means reflashing the bootloader 
 | `-ERR E_NOT_BONDED` | Privileged verb over an unbonded BLE link | Pair first, or use serial |
 | `-ERR E_BAD_STATE` from `OTA APPLY` | The sender is not READY | Wait for Thread to attach |
 | `apply: no reply` | The target does not allow-list the sender's key, or the frame was lost | `ADMIN ADD <sender PUBKEY>` on the target; retry |
-| No report within 12 minutes | The report was lost, or the target is off the mesh | Check the target's `ota-status`; the 10-minute trial has settled by then |
+| No report within 12 minutes | The report was lost, or the target is off the mesh | Check the target's `WHOAMI` `ota=` (or `ota-status`); the 10-minute trial has settled by then |
 | `!WARN link-rx-overrun` on an MG24 | The host wrote faster than the node could read | Keep one line in flight; use the provided tools |
 | MG24 port seems dead | Opened with DTR low; the USB bridge forwards only while DTR is asserted | Reopen with DTR asserted (pyserial's default) |
